@@ -1,0 +1,32 @@
+package name1;
+import java.util.HashSet;
+
+public class HashSetExample {
+    public static void main(String[] args) {
+        
+        HashSet<String> names = new HashSet<>();
+
+        
+        names.add("Abirami");
+        names.add("sowndarya");
+        names.add("rakshu");
+        names.add("venky");
+        names.add("vicky"); 
+
+        System.out.println("Names in HashSet: " + names);
+        
+        System.out.println("Does HashSet contain 'sowndarya'? " + names.contains("sowndarya"));
+
+        names.remove("venky");
+        System.out.println("After removing venky: " + names);
+
+        
+        System.out.println("Total names: " + names.size());
+
+        
+        System.out.println("Iterating through HashSet:");
+        for (String name : names) {
+            System.out.println(name);
+        }
+    }
+}
