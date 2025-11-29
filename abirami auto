@@ -1,0 +1,38 @@
+package google;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
+
+
+public class BOOKCARTLOGIN {
+
+	public static void main(String[] args) {
+		WebDriver bookcart= new ChromeDriver();
+		bookcart.get("https://bookcart.azurewebsites.net/login");
+		bookcart.manage().window().maximize();
+		
+		
+		WebElement loginButton = bookcart.findElement(By.className("mat-mdc-button-touch-target"));
+		loginButton.click();
+		
+		WebElement userName = bookcart.findElement(By.id("mat-input-0"));
+		userName.sendKeys("tina12");
+		
+		WebElement password = bookcart.findElement(By.id("mat-input-1"));
+		password.sendKeys("123456789");
+		
+		WebElement clickLogin = bookcart.findElement(By.className("mat-mdc-button-touch-target"));
+		clickLogin.click();
+		
+		
+		
+		
+
+		bookcart.quit();
+		
+
+	}
+
+}
