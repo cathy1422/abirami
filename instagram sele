@@ -1,0 +1,38 @@
+package instagram;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class login {
+	public static void main(String[] args) {
+		//web opening 
+		
+	WebDriver login = new ChromeDriver();
+	login.get("https://www.instagram.com/");
+	login.manage().window().maximize();
+	
+	//login details and elements 
+	
+	WebElement logo = login.findElement(By.cssSelector("i[@aria-label='Instagram']"));
+	
+	WebElement bg_img = login.findElement(By.cssSelector("img[alt='origin-when-cross-origin\']"));
+	String img = bg_img.getAttribute("src");
+	System.out.println(bg_img);
+	
+	WebElement username = login.findElement(By.className("_aa4b _add6 _ac4d _ap35"));
+	username.sendKeys("sele.nium001");
+	
+	WebElement password = login.findElement(By.className("_aa4b _add6 _ac4d _ap35"));
+	password.sendKeys("selenium001");
+	
+	WebElement loginButton = login.findElement(By.className("html-div xexx8yu xyri2b x18d9i69 x1c1uobl x9f619 xjbqb8w x78zum5 x15mokao x1ga7v0g x16uus16 xbiv7yw x1xmf6yo x1e56ztr x11hdunq x11gldyt x1n2onr6 x1plvlek xryxfnj x1c4vz4f x2lah0s xdt5ytf xqjyukv x1qjc9v5 x1oa3qoh x1nhvcw1"));
+	loginButton.click();
+	
+	
+	login.quit();
+	
+	}
+
+}
