@@ -1,0 +1,83 @@
+package automationpanda;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class PandaLogin {
+	
+	public static void main(String[] args) {
+		
+	WebDriver Login = new ChromeDriver();
+	Login.get("https://automationpanda.com/2021/12/29/want-to-practice-test-automation-try-these-demo-sites/");
+    Login.manage().window().maximize();
+    Login.manage().timeouts().implicitlyWait(Duration.ofSeconds(19));
+    
+    String title = Login.getTitle();
+    System.out.println("class=\"site-title\""+ title);
+    
+    if (title.contains("Automation panda"))
+    {
+    System.out.println("test passed; title is correct");
+    }else{
+    	System.out.println("test failed : title is incorrect");	
+    }
+    
+    WebElement Home = Login.findElement(By.xpath("href=\"/\""));
+    Home.click();
+    
+   WebElement EmailAddress = Login.findElement(By.id("subscribe-field"));
+   EmailAddress.sendKeys("cathelineabi@gmail.com");
+   
+   WebElement Button = Login.findElement(By.className("wp-block-button__link"));
+   Button.click();
+   
+   WebElement MyTweet = Login.findElement(By.className("twitter-timeline"));
+   MyTweet.click();
+   
+   WebElement FB = Login.findElement(By.className("share-facebook sd-button share-icon no-text"));
+   FB.click();
+   
+   WebElement Linkedin = Login.findElement(By.className("share-linkedin sd-button share-icon no-text"));
+   Linkedin.click();
+   
+   WebElement Reblog = Login.findElement(By.xpath("#"));
+   Reblog.click();
+   
+   WebElement Likes = Login.findElement(By.className("wpl-button like"));
+   Likes.click();
+  
+    WebElement About = Login.findElement(By.xpath("https://automationpanda.com/about/"));
+    About.click();
+    
+    WebElement contact = Login.findElement(By.xpath("https://automationpanda.com/contact/"));
+    contact.click();
+    
+    WebElement Speaking = Login.findElement(By.xpath("https://automationpanda.com/speaking/"));
+    Speaking.click();
+    
+    WebElement Teaching = Login.findElement(By.xpath("https://automationpanda.com/teaching/"));
+    Teaching.click();
+    
+    WebElement BDD = Login.findElement(By.xpath("https://automationpanda.com/bdd/"));
+    BDD.click();
+    
+    WebElement Development = Login.findElement(By.xpath("https://automationpanda.com/development/"));
+    Development.click();
+    
+    WebElement Testing = Login.findElement(By.xpath("https://automationpanda.com/testing/"));
+    Testing.click();
+    
+    WebElement Python = Login.findElement(By.xpath("https://automationpanda.com/python/"));
+    Python.click();
+    
+    
+    Login.quit();
+
+	}
+
+}
+
